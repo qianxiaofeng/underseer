@@ -1,4 +1,7 @@
 @import '~antd/dist/antd.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /*html,*/
 /*body {*/
@@ -27,3 +30,4 @@
 .site-layout .site-layout-background {
     background: #fff;
 }
+
