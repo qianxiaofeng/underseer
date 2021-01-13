@@ -3,8 +3,7 @@ import Head from 'next/head'
 import { Layout, Menu, Breadcrumb }  from 'antd'
 
 export default function Home() {
-    const { Header, Content, Footer } = Layout;
-
+    const {Content, Footer} = Layout
   return (
     <div>
       <Head>
@@ -12,22 +11,9 @@ export default function Home() {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-      {/*<main className={styles.main}>*/}
-        {/*<h1 className={styles.title}>*/}
-          {/*Hello World*/}
-        {/*</h1>*/}
-
-      {/*</main>*/}
         <Layout>
-            <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-                <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                    <Menu.Item key="1">nav 1</Menu.Item>
-                    <Menu.Item key="2">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>
-                </Menu>
-            </Header>
-            <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+                <NavBar />
+            <Content className="site-layout" style={{ padding: '0 50px',marginTop: 64 }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>List</Breadcrumb.Item>
@@ -52,8 +38,12 @@ export default function Home() {
                                     className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message
                                 </button>
                             </div>
-
                     </div>
+                    {
+                        [...Array(150).keys()].map((i)=>(
+                            <p key={i}>long text</p>
+                        ))
+                    }
                 </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>copyright ©2020 underseer</Footer>
